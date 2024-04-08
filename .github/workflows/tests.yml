@@ -1,0 +1,84 @@
+name: CI Tests
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Set up all supported Python versions for tox.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install tox
+        run: python -m pip install tox
+
+      - name: Run tests
+        run: tox run
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install tox
+        run: python -m pip install tox
+
+      - name: Style and lint
+        run: tox -e lint
+
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install tox
+        run: python -m pip install tox
+
+      - name: Build documentation
+        run: tox -e docs
+
+      - name: Clean up Sphinx detritus
+        run: rm -rf docs/_build/html/{.doctrees,.buildinfo}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: |
+            ./docs/_build/html/**

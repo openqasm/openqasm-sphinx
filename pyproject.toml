@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openqasm-sphinx"
+description = "Sphinx tools for OpenQASM programs"
+requires-python = ">=3.8"
+license = { text = "Apache 2.0" }
+authors = [
+    { name = "OpenQASM contributors" },
+]
+keywords = [
+    "openqasm",
+    "quantum programming language",
+    "documentation",
+    "Sphinx",
+]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+]
+dynamic = ["version", "readme", "version"]
+
+[tool.setuptools.dynamic]
+version = { file = "src/openqasm_sphinx/VERSION.txt" }
+readme = { file = "README.md", content-type = "text/markdown; variant=GFM" }
+dependencies = { file = "requirements.txt" }
+
+[tool.setuptools.packages]
+find = { where = ["src"] }
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.pylint.main]
+py-version = "3.12"
+disable = [
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "missing-class-docstring",
+]
