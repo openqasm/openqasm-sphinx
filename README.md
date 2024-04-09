@@ -27,7 +27,7 @@ extensions = [
 ]
 ```
 
-There is no need to import the extension; Sphinx will ahndle this automatically.
+There is no need to import the extension; Sphinx will handle this automatically.
 
 
 ## Developing
