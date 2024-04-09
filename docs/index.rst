@@ -1,9 +1,23 @@
+=========================
 Sphinx Tools for OpenQASM
 =========================
 
 This project is a Sphinx extension that adds an OpenQASM domain for Sphinx.
-The domain is called ``oq``, and can be used to document both OpenQASM 2 and 3.
+The Python package is called ``openqasm-sphinx``, and `can be downloaded from PyPI <https://pypi.org/project/openqasm-sphinx>`__.
 
+To install the package using pip:
+
+.. code-block:: bash
+
+   pip install openqasm-sphinx
+
+`The source is hosted on GitHub <https://github.com/openqasm/openqasm-sphinx>`__.
+
+
+The ``oq`` domain
+=================
+
+This package provides a domain called ``oq``, and can be used to document both OpenQASM 2 and 3.
 To use this domain, make sure this package is installed in your docs build, and add ``openqasm_sphinx`` to your ``extensions`` list in your ``conf.py`` file, such as:
 
 .. code-block:: python
