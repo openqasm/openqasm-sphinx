@@ -12,8 +12,9 @@ version = openqasm_sphinx.__version__
 primary_domain = "rst"
 
 extensions = [
-    "openqasm_sphinx",
+    "sphinx.ext.githubpages",
     "sphinxcontrib.katex",
+    "openqasm_sphinx",
 ]
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
