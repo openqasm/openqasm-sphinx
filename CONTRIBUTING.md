@@ -17,6 +17,9 @@ tests if at all possible, and updated documentation if necessary.  Most
 non-documentation changes will need a release note
 (`reno new --edit <some identifier>'`) as well.
 
+There are not currently any tests, mostly because I haven't looked into a good
+way to test Sphinx domains yet.
+
 When you make your first pull request, a bot will comment and ask you to sign
 the contributor license agreement.  This certifies that you agree to license
 your contributions under the [terms of the license in the repository

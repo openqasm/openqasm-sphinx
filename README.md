@@ -40,7 +40,7 @@ Set up your development environment by installing the development requirements w
 pip install -r requirements-dev.txt tox
 ```
 
-This installs a few more packages than the dependencies of the package at runtime, because there are some tools we use for testing also included.
+This installs a few more packages than the dependencies of the package at runtime.
 
 After the development requirements are installed, you can install an editable version of the package with
 

@@ -41,7 +41,38 @@ target-version = ["py38", "py39", "py310", "py311", "py312"]
 [tool.pylint.main]
 py-version = "3.12"
 disable = [
-    "missing-module-docstring",
-    "missing-function-docstring",
+    # All refactors.  Pylint's pretty opinionated and there's nothing really wrong with much of what
+    # it complains about - I can't be bothered to sort out maybe useful ones.
+    "R",
+    # Conventions.  Remove ones that are duplicate with `black`, or are just code style that isn't
+    # always relevant (or in some cases, isn't even better!).
+    "bad-classmethod-argument",
+    "bad-file-encoding",
+    "bad-mcs-classmethod-argument",
+    "bad-mcs-method-argument",
+    "invalid-characters-in-docstring",
+    "line-too-long",
     "missing-class-docstring",
+    "missing-final-newline",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "mixed-line-endings",
+    "multiple-imports",
+    "multiple-statements",
+    "superfluous-parens",
+    "too-many-lines",
+    "trailing-newlines",
+    "trailing-whitespace",
+    "unexpected-line-ending-format",
+    "ungrouped-imports",
+    "unnecessary-direct-lambda-call",
+    "unnecessary-dunder-call",
+    "unnecessary-lambda-assignment",
+    "use-implicit-booleaness-not-comparison",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "use-implicit-booleaness-not-comparison-to-zero",
+    "wrong-import-order",
+    "wrong-import-position",
+    "wrong-spelling-in-comment",
+    "wrong-spelling-in-docstring",
 ]
