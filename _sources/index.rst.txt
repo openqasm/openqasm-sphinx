@@ -20,7 +20,7 @@ If your documentation project is primarily (or only) about documenting OpenQASM 
 
 .. code-block:: python
 
-   extension = ["openqasm_sphinx"]
+   extensions = ["openqasm_sphinx"]
    primary_domain = "oq"
 
 The project defines a directive for documenting OpenQASM gates.
