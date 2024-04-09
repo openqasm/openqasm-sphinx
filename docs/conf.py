@@ -1,14 +1,20 @@
-project = 'OpenQASM Pygments Tools'
-copyright = '2022, OpenQASM contributors'
+# SPDX-License-Identifier: Apache-2.0
+
+# pylint: disable=invalid-name
+
+import openqasm_sphinx
+
+project = 'OpenQASM Sphinx extension'
+project_copyright = '2024, OpenQASM contributors'
 author = 'OpenQASM contributors'
-version = "0.1.2"
+version = openqasm_sphinx.__version__
+
+primary_domain = "rst"
 
 extensions = [
-    "sphinx.ext.autodoc",
+    "openqasm_sphinx",
+    "sphinxcontrib.katex",
 ]
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-# Document the docstring for the class and the __init__ method together.
-autoclass_content = "both"
 
 html_theme = 'alabaster'
