@@ -38,8 +38,16 @@
   <section id="sphinx-tools-for-openqasm">
 <h1>Sphinx Tools for OpenQASM<a class="headerlink" href="#sphinx-tools-for-openqasm" title="Link to this heading">¶</a></h1>
 <p>This project is a Sphinx extension that adds an OpenQASM domain for Sphinx.
-The domain is called <code class="docutils literal notranslate"><span class="pre">oq</span></code>, and can be used to document both OpenQASM 2 and 3.</p>
-<p>To use this domain, make sure this package is installed in your docs build, and add <code class="docutils literal notranslate"><span class="pre">openqasm_sphinx</span></code> to your <code class="docutils literal notranslate"><span class="pre">extensions</span></code> list in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, such as:</p>
+The Python package is called <code class="docutils literal notranslate"><span class="pre">openqasm-sphinx</span></code>, and <a class="reference external" href="https://pypi.org/project/openqasm-sphinx">can be downloaded from PyPI</a>.</p>
+<p>To install the package using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>openqasm-sphinx
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/openqasm/openqasm-sphinx">The source is hosted on GitHub</a>.</p>
+<section id="the-oq-domain">
+<h2>The <code class="docutils literal notranslate"><span class="pre">oq</span></code> domain<a class="headerlink" href="#the-oq-domain" title="Link to this heading">¶</a></h2>
+<p>This package provides a domain called <code class="docutils literal notranslate"><span class="pre">oq</span></code>, and can be used to document both OpenQASM 2 and 3.
+To use this domain, make sure this package is installed in your docs build, and add <code class="docutils literal notranslate"><span class="pre">openqasm_sphinx</span></code> to your <code class="docutils literal notranslate"><span class="pre">extensions</span></code> list in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, such as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;My Project&quot;</span>
 <span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Me&quot;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
@@ -98,6 +106,7 @@ The body of the directive is the documentation content.</p>
 </div>
 </dd></dl>
 
+</section>
 </section>
 
 
