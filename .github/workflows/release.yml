@@ -1,6 +1,7 @@
 name: Release version
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'
@@ -32,6 +33,7 @@ jobs:
   deploy-package:
     name: Publish package
     runs-on: ubuntu-latest
+    if: github.event_name == 'tag'
     environment: release
     permissions:
       contents: write
