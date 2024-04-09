@@ -4,8 +4,10 @@
 
 This repository provides the Python package `openqasm-sphinx`, which provides a [Sphinx extension](https://www.sphinx-doc.org) for documentation OpenQASM 2 and 3 code.
 
+The documentation is hosted at https://openqasm.com/openqasm-sphinx.
 
-## Installation and use
+
+## Installation
 
 Install the latest release of `openqasm-sphinx` package from pip:
 
@@ -14,6 +16,8 @@ pip install openqasm-sphinx
 ```
 
 This will automatically install all the dependencies as well (Sphinx, for example) if they are not already installed.
+
+## Use
 
 To activate the extension add `openqasm_sphinx` to your `extensions` list in your Sphinx `conf.py` file, such as:
 
@@ -28,6 +32,25 @@ extensions = [
 ```
 
 There is no need to import the extension; Sphinx will handle this automatically.
+
+Document a gate by doing:
+
+```rst
+
+.. oq:gate:: my_gate(θ) a, b
+
+    This is my gate.
+```
+
+and later insert a cross-reference to it in inline text with:
+
+```rst
+For more information, see :oq:gate:`my_gate`.
+```
+
+If you are set `primary_domain = "oq"` in your Sphinx configuration, you can drop the `oq` prefixes.
+
+For more complete usage information, see [the rendered documentation](https://openqasm.com/openqasm-sphinx).
 
 
 ## Developing
