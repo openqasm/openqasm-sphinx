@@ -78,7 +78,7 @@ jobs:
       - name: Clean up Sphinx detritus
         run: rm -rf docs/_build/html/{.doctrees,.buildinfo}
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           path: |
             ./docs/_build/html/**
